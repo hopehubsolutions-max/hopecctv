@@ -6,7 +6,7 @@
 
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/hopevision   # <-- EDIT THIS
+  repo: hopehubsolutions-max/hopecctv   # <-- EDIT THIS
   branch: main
 
 # Where uploaded photos are saved in your project:
