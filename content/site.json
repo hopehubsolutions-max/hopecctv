@@ -1,0 +1,71 @@
+{
+  "theme": {
+    "accent": "#d3a571",
+    "background": "#13294a",
+    "brandSize": 1.35
+  },
+  "hero": {
+    "eyebrow": "Solar · SIM · WiFi Security",
+    "title": "Security that <em>never sleeps.</em>",
+    "motto": "“Sekhele sa ts'ereletso”",
+    "lead": "Premium solar-powered cameras that work where others can't — no electricity, no router required. Watch your home, farm or business from anywhere, day or night.",
+    "image": "images/hero.jpg",
+    "stat1n": "100%", "stat1l": "Solar powered",
+    "stat2n": "24/7", "stat2l": "Night vision",
+    "stat3n": "0", "stat3l": "Wiring needed"
+  },
+  "why": {
+    "eyebrow": "The HopeVision difference",
+    "heading": "Built for the way we actually live.",
+    "intro": "Power cuts, remote plots, no fibre line — ordinary cameras fail here. Ours were chosen precisely because they don't.",
+    "cards": [
+      { "title": "Runs on the sun", "text": "Built-in solar panel and 8000mAh battery. No cables to the grid, no monthly electricity worry — it keeps watching through every load-shedding." },
+      { "title": "SIM or WiFi — your choice", "text": "Pop in a 4G SIM card and it works in the deepest rural areas with no router at all. Or connect to WiFi at home. You're covered either way." },
+      { "title": "You see everything", "text": "Full-colour HD by day, infrared by night, motion tracking that follows movement, and instant alerts straight to your phone — from anywhere in the world." }
+    ]
+  },
+  "products": {
+    "eyebrow": "In stock now",
+    "heading": "Our solar camera range.",
+    "intro": "Every model is solar-powered, weatherproof, and ready to protect indoors or out. Prices in Loti (M). Tap “Order” to reach us instantly.",
+    "items": [
+      { "id": "vts02g", "name": "VTS02-G", "sub": "Triple-image dual-lens flagship · 4G SIM", "badge": "Flagship", "price": "1,241.34", "image": "images/vts02g.jpg", "flagship": true, "variant": "Our top model — dual lens with 3 images, 2.8mm + 4mm, for the widest, sharpest coverage.", "features": "Dual lens, 3 images, 4.0MP HD, 4G SIM card, PTZ rotate & track, Two-way audio, Night vision, Voice alarm, 8W solar + 8000mAh, Indoor & outdoor" },
+      { "id": "vcs20g", "name": "VCS20-G", "sub": "Dual-lens · 4G SIM", "badge": "Best seller", "price": "994.75", "image": "images/vcs20g.jpg", "flagship": false, "variant": "", "features": "Dual lens, 4.0MP HD, 4G SIM card, PTZ rotate & track, Two-way intercom, Night vision, TF card storage, 8W solar + 8000mAh" },
+      { "id": "vc20w", "name": "VC20-W", "sub": "Compact · WiFi", "badge": "Value", "price": "844.46", "image": "images/vc20w.jpg", "flagship": false, "variant": "", "features": "3.0MP HD, WiFi connection, Two-way voice, Motion detection, Picture push, TF card storage, 8W solar + 8000mAh" },
+      { "id": "vc3", "name": "VC3-W / VC3-G", "sub": "5.0MP PTZ · WiFi or SIM", "badge": "Two versions", "price": "821.78", "image": "images/vc3.jpg", "flagship": false, "variant": "Same camera, your choice of connection: VC3-W uses WiFi, VC3-G uses a 4G SIM card. Both solar.", "features": "5.0MP HD, PTZ rotate & track, WiFi or 4G SIM, Cloud + TF storage, Night vision, 8W solar + 8000mAh" }
+    ]
+  },
+  "heritage": {
+    "image": "images/band.jpg",
+    "motto": "“Sekhele sa ts'ereletso”",
+    "text": "Like the Maluti standing watch over the Kingdom in the Sky, HopeVision keeps a steady eye on what matters most to you — your home, your family, your livelihood. Proudly rooted in Lesotho."
+  },
+  "leadership": {
+    "eyebrow": "The people behind HopeVision",
+    "heading": "Trusted faces, real accountability.",
+    "people": [
+      { "name": "Tsepo Mantutle", "role": "Founder", "initials": "TM", "bio": "Founder of HopeVision, on a mission to make reliable security accessible.", "image": "" },
+      { "name": "Relebohile Mafate", "role": "Manager & Director", "initials": "RM", "bio": "Director overseeing operations, installations and client care.", "image": "" }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Let's protect what's yours",
+    "heading": "Get in touch.",
+    "address": "FosoHardware Complex, Lesotho",
+    "mapQuery": "FosoHardware Complex Lesotho",
+    "phone1": "+266 63 301 566",
+    "phone2": "+27 72 150 1937",
+    "whatsapp": "26663301566",
+    "email": "hopehubsolutions@gmail.com",
+    "bankName": "Standard Bank",
+    "bankAccountName": "Tsepo Mantutle",
+    "bankAccountNo": "9080008256590",
+    "bankType": "Current",
+    "bankBranch": "Pioneer · 062967"
+  },
+  "social": {
+    "instagram": "https://instagram.com/nutty_mantutle",
+    "tiktok": "https://tiktok.com/@nutty_mantutle",
+    "footerTagline": "“Sekhele sa ts'ereletso” — your shield of security. Solar surveillance for homes, farms and businesses across Lesotho."
+  }
+}

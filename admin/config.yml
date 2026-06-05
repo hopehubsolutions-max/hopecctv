@@ -1,0 +1,138 @@
+# ============================================================
+#  HopeVision website — editor settings
+#  CHANGE ONE LINE: replace YOUR-GITHUB-USERNAME/hopevision
+#  below with your real GitHub username and repository name.
+# ============================================================
+
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/hopevision   # <-- EDIT THIS
+  branch: main
+
+# Where uploaded photos are saved in your project:
+media_folder: "images"
+public_folder: "/images"
+
+
+collections:
+  - name: site
+    label: "Your website"
+    description: "Edit the text, prices, photos, colours and contact details, then press Publish."
+    files:
+      - name: content
+        label: "Website content"
+        file: "content/site.json"
+        format: json
+        fields:
+
+          - label: "🎨 Theme (colours & sizes)"
+            name: theme
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Accent colour (the gold/bronze)", name: accent, widget: string, hint: "A hex code, e.g. #d3a571" }
+              - { label: "Background colour (the navy)", name: background, widget: string, hint: "A hex code, e.g. #13294a" }
+              - { label: "Business-name size", name: brandSize, widget: number, value_type: float, step: 0.05, hint: "1.35 is normal. Bigger = larger 'HopeVision' in the menu." }
+
+          - label: "🏔️ Hero (top of the page)"
+            name: hero
+            widget: object
+            fields:
+              - { label: "Small label", name: eyebrow, widget: string }
+              - { label: "Big headline (you can keep the <em>…</em> around words to highlight them gold)", name: title, widget: string }
+              - { label: "Motto", name: motto, widget: string }
+              - { label: "Intro paragraph", name: lead, widget: text }
+              - { label: "Background photo", name: image, widget: image }
+              - { label: "Stat 1 — number", name: stat1n, widget: string }
+              - { label: "Stat 1 — label", name: stat1l, widget: string }
+              - { label: "Stat 2 — number", name: stat2n, widget: string }
+              - { label: "Stat 2 — label", name: stat2l, widget: string }
+              - { label: "Stat 3 — number", name: stat3n, widget: string }
+              - { label: "Stat 3 — label", name: stat3l, widget: string }
+
+          - label: "✅ Why HopeVision"
+            name: why
+            widget: object
+            fields:
+              - { label: "Small label", name: eyebrow, widget: string }
+              - { label: "Heading", name: heading, widget: string }
+              - { label: "Intro", name: intro, widget: text }
+              - label: "Cards"
+                name: cards
+                widget: list
+                fields:
+                  - { label: "Title", name: title, widget: string }
+                  - { label: "Text", name: text, widget: text }
+
+          - label: "📷 Cameras & prices"
+            name: products
+            widget: object
+            fields:
+              - { label: "Small label", name: eyebrow, widget: string }
+              - { label: "Heading", name: heading, widget: string }
+              - { label: "Intro", name: intro, widget: text }
+              - label: "Cameras"
+                name: items
+                widget: list
+                summary: "{{fields.name}} — M{{fields.price}}"
+                fields:
+                  - { label: "Short code (don't change)", name: id, widget: string }
+                  - { label: "Name", name: name, widget: string }
+                  - { label: "Subtitle", name: sub, widget: string }
+                  - { label: "Badge (e.g. Best seller)", name: badge, widget: string }
+                  - { label: "Price (numbers only)", name: price, widget: string }
+                  - { label: "Photo", name: image, widget: image }
+                  - { label: "Flagship (show biggest)?", name: flagship, widget: boolean, default: false }
+                  - { label: "Variant note (optional)", name: variant, widget: string, required: false }
+                  - { label: "Features (separate each with a comma)", name: features, widget: text }
+
+          - label: "🇱🇸 Heritage band"
+            name: heritage
+            widget: object
+            fields:
+              - { label: "Background photo", name: image, widget: image }
+              - { label: "Motto", name: motto, widget: string }
+              - { label: "Text", name: text, widget: text }
+
+          - label: "👤 Our team"
+            name: leadership
+            widget: object
+            fields:
+              - { label: "Small label", name: eyebrow, widget: string }
+              - { label: "Heading", name: heading, widget: string }
+              - label: "People"
+                name: people
+                widget: list
+                summary: "{{fields.name}} — {{fields.role}}"
+                fields:
+                  - { label: "Name", name: name, widget: string }
+                  - { label: "Role", name: role, widget: string }
+                  - { label: "Initials (shown if no photo)", name: initials, widget: string }
+                  - { label: "Short bio", name: bio, widget: text }
+                  - { label: "Photo (optional)", name: image, widget: image, required: false }
+
+          - label: "📞 Contact & banking"
+            name: contact
+            widget: object
+            fields:
+              - { label: "Small label", name: eyebrow, widget: string }
+              - { label: "Heading", name: heading, widget: string }
+              - { label: "Address", name: address, widget: string }
+              - { label: "Map search text", name: mapQuery, widget: string }
+              - { label: "Phone 1", name: phone1, widget: string }
+              - { label: "Phone 2", name: phone2, widget: string }
+              - { label: "WhatsApp number (digits only, no + or spaces)", name: whatsapp, widget: string }
+              - { label: "Email", name: email, widget: string }
+              - { label: "Bank name", name: bankName, widget: string }
+              - { label: "Account name", name: bankAccountName, widget: string }
+              - { label: "Account number", name: bankAccountNo, widget: string }
+              - { label: "Account type", name: bankType, widget: string }
+              - { label: "Branch", name: bankBranch, widget: string }
+
+          - label: "🔗 Social & footer"
+            name: social
+            widget: object
+            fields:
+              - { label: "Instagram link", name: instagram, widget: string }
+              - { label: "TikTok link", name: tiktok, widget: string }
+              - { label: "Footer tagline", name: footerTagline, widget: text }

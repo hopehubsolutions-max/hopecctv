@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HopeVision — Sekhele sa ts'"'"'ereletso | Solar Security Cameras</title>
+<meta name="description" content="HopeVision — premium solar-powered SIM & WiFi security cameras. No electricity, no router needed. Lesotho'"'"'s shield of security.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#13294a; --navy-2:#193458; --navy-3:#20406e;
+    --ivory:#f6f1e8; --ivory-dim:#cfc9bb;
+    --bronze:#d3a571; --bronze-2:#bd8a54; --brown:#6a5239;
+    --line:rgba(211,165,113,.24);
+    --shadow:0 30px 80px -30px rgba(0,0,0,.65);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:
+      radial-gradient(ellipse 90% 55% at 50% 102%, rgba(211,165,113,.12), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 80% -5%, rgba(32,64,110,.6), transparent 55%),
+      linear-gradient(180deg,var(--navy) 0%,var(--navy-3) 48%,var(--navy) 100%);
+    background-attachment:fixed;
+    color:var(--ivory);
+    font-family:'Manrope',sans-serif; font-weight:400; line-height:1.6;
+    overflow-x:hidden; -webkit-font-smoothing:antialiased;
+  }
+  body::before{ /* subtle grain */
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:500;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--bronze);font-weight:600}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.6rem;border-radius:2px;
+    font-weight:600;font-size:.92rem;letter-spacing:.02em;transition:.3s;cursor:pointer;border:none}
+  .btn-gold{background:linear-gradient(135deg,var(--bronze),var(--bronze-2));color:#1a1206}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(199,154,106,.6)}
+  .btn-ghost{background:transparent;color:var(--ivory);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--bronze);color:var(--bronze)}
+
+  /* NAV */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.4s;
+    background:rgba(10,26,48,0);backdrop-filter:blur(0px)}
+  header.scrolled{background:rgba(10,26,48,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;align-items:center;gap:.7rem;font-family:'Fraunces',serif;font-size:1.35rem;font-weight:600}
+  .brand .mark{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+    background:radial-gradient(circle at 35% 30%,var(--bronze),var(--brown));color:#fff;font-size:1rem}
+  .brand b{color:var(--bronze)}
+  .links{display:flex;gap:2.1rem;font-size:.9rem;font-weight:500}
+  .links a{color:var(--ivory-dim);transition:.25s;position:relative}
+  .links a:hover{color:var(--ivory)}
+  .links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--bronze);transition:.3s}
+  .links a:hover::after{width:100%}
+  .nav-cta{display:flex;gap:.8rem;align-items:center}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .burger span{width:24px;height:2px;background:var(--ivory)}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:78px;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;
+    transform:scale(1.05);animation:slowzoom 24s ease-in-out infinite alternate}
+  @keyframes slowzoom{to{transform:scale(1.14)}}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:
+    linear-gradient(90deg,rgba(19,41,74,.97) 0%,rgba(19,41,74,.82) 38%,rgba(19,41,74,.45) 70%,rgba(19,41,74,.6) 100%),
+    linear-gradient(180deg,rgba(19,41,74,.5),transparent 30%,transparent 60%,rgba(19,41,74,.95))}
+  .hero-glow{position:absolute;width:900px;height:900px;border-radius:50%;top:-30%;right:-15%;
+    background:radial-gradient(circle,rgba(211,165,113,.18),transparent 62%);pointer-events:none;z-index:1}
+  .hero-glow.b{top:auto;bottom:-35%;left:-20%;right:auto;background:radial-gradient(circle,rgba(32,64,110,.55),transparent 60%)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 1.1fr;gap:40px;align-items:center;position:relative;z-index:2;width:100%}
+  .hero-copy{max-width:560px}
+  .hero h1{font-size:clamp(2.6rem,5.4vw,4.4rem);line-height:1.02;margin:1.1rem 0 .3rem}
+  .hero h1 em{font-style:italic;color:var(--bronze)}
+  .motto{font-family:'Fraunces',serif;font-style:italic;font-size:1.5rem;color:var(--ivory-dim);margin-bottom:1.2rem}
+  .hero p.lead{color:var(--ivory-dim);font-size:1.05rem;max-width:480px;margin-bottom:2rem}
+  .hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+  .hero-stats{display:flex;gap:2.4rem;margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+  .hero-stats div span{display:block;font-family:'Fraunces',serif;font-size:1.7rem;color:var(--bronze)}
+  .hero-stats div small{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ivory-dim)}
+
+  /* 3D COVERFLOW */
+  .stage{position:relative;height:520px;perspective:1600px}
+  .coverflow{position:absolute;inset:0;transform-style:preserve-3d}
+  .cf-card{position:absolute;top:50%;left:50%;width:300px;height:360px;margin:-180px 0 0 -150px;
+    border-radius:14px;overflow:hidden;transition:transform .8s cubic-bezier(.22,.61,.36,1),opacity .8s,filter .8s;
+    background:linear-gradient(160deg,#fbfaf7,#e9e3d6);box-shadow:var(--shadow);cursor:pointer;
+    border:1px solid rgba(255,255,255,.5)}
+  .cf-card img{width:100%;height:74%;object-fit:cover;display:block;background:#fff}
+  .cf-meta{padding:.8rem 1rem;color:#15233b}
+  .cf-meta .nm{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem}
+  .cf-meta .pr{color:var(--bronze-2);font-weight:700;font-size:.95rem}
+  .cf-badge{position:absolute;top:12px;left:12px;background:rgba(10,26,48,.9);color:var(--bronze);
+    font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;padding:.32rem .6rem;border-radius:2px;font-weight:600}
+  .cf-dots{position:absolute;bottom:-42px;left:50%;transform:translateX(-50%);display:flex;gap:.55rem;z-index:5}
+  .cf-dots i{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;transition:.3s}
+  .cf-dots i.on{background:var(--bronze);width:22px;border-radius:4px}
+
+  /* SECTION SHELL */
+  section{position:relative;z-index:2;padding:110px 0}
+
+  /* HERITAGE BAND */
+  .heritage{position:relative;padding:140px 0;text-align:center;overflow:hidden;background:#0e2240}
+  .heritage-bg{position:absolute;inset:0;background-size:cover;background-position:center 35%;z-index:0}
+  .heritage-bg::after{content:"";position:absolute;inset:0;background:
+    linear-gradient(180deg,rgba(14,34,64,.82),rgba(14,34,64,.55) 45%,rgba(14,34,64,.92))}
+  .heritage-inner{position:relative;z-index:2;max-width:760px}
+  .heritage-inner p{color:var(--ivory-dim);font-size:1.12rem;line-height:1.9}
+  .sec-head{max-width:680px;margin-bottom:54px}
+  .sec-head h2{font-size:clamp(2rem,3.6vw,2.9rem);line-height:1.08;margin:.7rem 0 .8rem}
+  .sec-head p{color:var(--ivory-dim)}
+
+  /* WHY */
+  .why{background:linear-gradient(180deg,transparent,rgba(13,34,64,.5),transparent)}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .why-card{padding:34px 28px;border:1px solid var(--line);border-radius:6px;background:rgba(13,34,64,.4);
+    transition:.4s;position:relative;overflow:hidden}
+  .why-card:hover{transform:translateY(-6px);border-color:var(--bronze)}
+  .why-card .ic{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;margin-bottom:1.1rem;
+    background:rgba(199,154,106,.12);border:1px solid var(--line)}
+  .why-card h3{font-size:1.25rem;margin-bottom:.5rem}
+  .why-card p{color:var(--ivory-dim);font-size:.94rem}
+  svg.ico{width:24px;height:24px;stroke:var(--bronze);fill:none;stroke-width:1.6}
+
+  /* PRODUCTS */
+  .prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+  .prod{display:grid;grid-template-columns:230px 1fr;gap:24px;padding:26px;border:1px solid var(--line);
+    border-radius:8px;background:linear-gradient(160deg,rgba(16,42,79,.55),rgba(10,26,48,.4));
+    transition:.4s;position:relative}
+  .prod:hover{transform:translateY(-5px);border-color:var(--bronze);box-shadow:var(--shadow)}
+  .prod.flagship{grid-column:1/-1;grid-template-columns:300px 1fr}
+  .prod .photo{border-radius:8px;overflow:hidden;background:linear-gradient(160deg,#faf8f4,#e7e1d4);
+    display:grid;place-items:center;aspect-ratio:1}
+  .prod .photo img{width:100%;height:100%;object-fit:cover}
+  .prod .tag{position:absolute;top:18px;right:18px;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--bronze);border:1px solid var(--line);padding:.3rem .6rem;border-radius:2px;font-weight:600}
+  .prod h3{font-size:1.5rem;margin-bottom:.15rem}
+  .prod .sub{color:var(--ivory-dim);font-size:.86rem;margin-bottom:.9rem}
+  .prod ul{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-bottom:1.1rem}
+  .prod ul li{font-size:.82rem;color:var(--ivory-dim);display:flex;align-items:center;gap:.35rem}
+  .prod ul li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--bronze)}
+  .price-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+    padding-top:1rem;border-top:1px solid var(--line)}
+  .price{font-family:'Fraunces',serif;font-size:1.9rem;color:var(--bronze)}
+  .price small{font-size:.8rem;color:var(--ivory-dim);font-family:'Manrope'}
+  .variant{font-size:.78rem;color:var(--ivory-dim);margin-top:.5rem;padding:.5rem .7rem;border-left:2px solid var(--bronze);background:rgba(199,154,106,.06)}
+
+  /* LEADERSHIP */
+  .lead-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;max-width:820px}
+  .leader{display:flex;gap:22px;align-items:center;padding:28px;border:1px solid var(--line);border-radius:8px;
+    background:rgba(13,34,64,.4)}
+  .leader .av{width:96px;height:96px;border-radius:50%;flex-shrink:0;overflow:hidden;
+    background:radial-gradient(circle at 35% 30%,var(--bronze),var(--brown));display:grid;place-items:center;
+    font-family:'Fraunces',serif;font-size:1.7rem;color:#fff}
+  .leader .av img{width:100%;height:100%;object-fit:cover}
+  .leader h3{font-size:1.3rem;margin-bottom:.1rem}
+  .leader .role{color:var(--bronze);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+
+  /* CONTACT / LOCATION */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .info-block{margin-bottom:1.8rem}
+  .info-block .lbl{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);margin-bottom:.5rem;font-weight:600}
+  .info-block a,.info-block p{color:var(--ivory);font-size:1.02rem;display:block;line-height:1.9}
+  .info-block a:hover{color:var(--bronze)}
+  .bank{border:1px solid var(--line);border-radius:8px;padding:26px;background:rgba(13,34,64,.4)}
+  .bank h3{font-size:1.2rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+  .bank table{width:100%;font-size:.9rem}
+  .bank td{padding:.42rem 0;color:var(--ivory-dim)}
+  .bank td:last-child{text-align:right;color:var(--ivory);font-weight:600}
+  .map{border-radius:8px;overflow:hidden;border:1px solid var(--line);height:300px;margin-top:1.4rem}
+  .map iframe{width:100%;height:100%;border:0;filter:grayscale(.3) contrast(1.05)}
+
+  /* FOOTER */
+  footer{background:#07131f;padding:60px 0 30px;border-top:1px solid var(--line);position:relative;z-index:2}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;align-items:flex-start}
+  .socials{display:flex;gap:1rem;margin-top:1rem}
+  .socials a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.3s}
+  .socials a:hover{border-color:var(--bronze);transform:translateY(-3px)}
+  .socials svg{width:18px;height:18px;fill:var(--ivory-dim)}
+  .socials a:hover svg{fill:var(--bronze)}
+  .foot-bottom{margin-top:46px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--ivory-dim)}
+  .lock{cursor:pointer;opacity:.4;transition:.3s}
+  .lock:hover{opacity:1;color:var(--bronze)}
+
+  /* WHATSAPP FLOAT */
+  .wa-float{position:fixed;bottom:26px;right:26px;z-index:60;width:60px;height:60px;border-radius:50%;
+    background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);transition:.3s}
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float svg{width:32px;height:32px;fill:#fff}
+
+  /* MODAL / ADMIN */
+  .modal{position:fixed;inset:0;z-index:200;background:rgba(5,12,22,.85);backdrop-filter:blur(6px);
+    display:none;align-items:center;justify-content:center;padding:20px}
+  .modal.open{display:flex}
+  .modal-box{background:var(--navy-2);border:1px solid var(--line);border-radius:10px;padding:34px;
+    width:100%;max-width:560px;max-height:88vh;overflow:auto}
+  .modal-box h3{font-size:1.5rem;margin-bottom:.4rem}
+  .modal-box p.hint{color:var(--ivory-dim);font-size:.85rem;margin-bottom:1.4rem}
+  .field{margin-bottom:1rem}
+  .field label{display:block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze);margin-bottom:.4rem}
+  .field input{width:100%;padding:.8rem 1rem;background:rgba(10,26,48,.6);border:1px solid var(--line);
+    border-radius:4px;color:var(--ivory);font-family:'Manrope';font-size:.95rem}
+  .field input:focus{outline:none;border-color:var(--bronze)}
+  .admin-prod{border:1px solid var(--line);border-radius:6px;padding:16px;margin-bottom:14px}
+  .admin-prod .row{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+  .admin-prod strong{font-family:'Fraunces';font-size:1.05rem}
+  .admin-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:1.2rem}
+  .file-btn{font-size:.8rem;color:var(--bronze);cursor:pointer;border:1px dashed var(--line);padding:.5rem .8rem;border-radius:4px}
+  .toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(120px);z-index:300;
+    background:var(--bronze);color:#1a1206;padding:.8rem 1.4rem;border-radius:4px;font-weight:600;transition:.4s;font-size:.9rem}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(28px);transition:.9s cubic-bezier(.16,.84,.44,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:920px){
+    .hero-grid{grid-template-columns:1fr;gap:10px}
+    .stage{height:430px;order:-1;margin-bottom:10px}
+    .why-grid{grid-template-columns:1fr}
+    .prod-grid{grid-template-columns:1fr}
+    .prod,.prod.flagship{grid-template-columns:1fr}
+    .lead-grid,.contact-grid{grid-template-columns:1fr}
+    .links{display:none}
+    .burger{display:flex}
+    .hero-stats{gap:1.4rem}
+  }
+</style>
+</head>
+<body>
+<!-- NAV -->
+<header id="hdr">
+  <div class="wrap">
+    <nav>
+      <a href="#top" class="brand"><span class="mark">H</span>Hope<b>Vision</b></a>
+      <div class="links">
+        <a href="#why">Why HopeVision</a>
+        <a href="#products">Cameras</a>
+        <a href="#leadership">Our Team</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-cta"><a class="btn btn-gold wa" id="navWa">Get a Quote</a></div>
+      <div class="burger" id="burger"><span></span><span></span><span></span></div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-glow"></div><div class="hero-glow b"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" id="heroEyebrow"></span>
+      <h1 id="heroTitle"></h1>
+      <div class="motto" id="heroMotto"></div>
+      <p class="lead" id="heroLead"></p>
+      <div class="hero-cta">
+        <a class="btn btn-gold wa" id="heroWa">Speak to us on WhatsApp</a>
+        <a class="btn btn-ghost" href="#products">View the range</a>
+      </div>
+      <div class="hero-stats">
+        <div><span id="s1n"></span><small id="s1l"></small></div>
+        <div><span id="s2n"></span><small id="s2l"></small></div>
+        <div><span id="s3n"></span><small id="s3l"></small></div>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="coverflow" id="coverflow"></div>
+      <div class="cf-dots" id="cfDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" id="whyEyebrow"></span>
+      <h2 id="whyHeading"></h2>
+      <p id="whyIntro"></p>
+    </div>
+    <div class="why-grid" id="whyGrid"></div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" id="prodEyebrow"></span>
+      <h2 id="prodHeading"></h2>
+      <p id="prodIntro"></p>
+    </div>
+    <div class="prod-grid" id="prodGrid"></div>
+  </div>
+</section>
+
+<!-- HERITAGE -->
+<section class="heritage" id="heritage">
+  <div class="heritage-bg" id="bandBg"></div>
+  <div class="wrap heritage-inner reveal">
+    <div class="motto" id="herMotto" style="font-size:2.1rem;color:var(--ivory);margin-bottom:.6rem"></div>
+    <p id="herText"></p>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership" class="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" id="leadEyebrow"></span>
+      <h2 id="leadHeading"></h2>
+    </div>
+    <div class="lead-grid" id="leadGrid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" id="ctEyebrow"></span>
+      <h2 id="ctHeading"></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="info-block"><div class="lbl">Visit us</div><p id="ctAddr"></p></div>
+        <div class="info-block"><div class="lbl">Call or WhatsApp</div><a id="ctPhone1"></a><a id="ctPhone2"></a></div>
+        <div class="info-block"><div class="lbl">Email</div><a id="ctEmail"></a></div>
+        <div class="bank">
+          <h3><svg class="ico" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6M5 10v9h14v-9M9 19v-5h6v5"/></svg> Banking details</h3>
+          <table>
+            <tr><td>Bank</td><td id="bkName"></td></tr>
+            <tr><td>Account name</td><td id="bkAcctName"></td></tr>
+            <tr><td>Account no.</td><td id="bkAcctNo"></td></tr>
+            <tr><td>Type</td><td id="bkType"></td></tr>
+            <tr><td>Branch</td><td id="bkBranch"></td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="info-block"><div class="lbl">Find us on the map</div></div>
+        <div class="map"><iframe id="ctMap" loading="lazy" src=""></iframe></div>
+        <a class="btn btn-gold wa" style="margin-top:1.4rem" id="contactWa">Order a camera now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div style="max-width:300px">
+        <a href="#top" class="brand"><span class="mark">H</span>Hope<b>Vision</b></a>
+        <p id="footTagline" style="color:var(--ivory-dim);font-size:.9rem;margin-top:1rem"></p>
+        <div class="socials">
+          <a id="socIg" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.22 1 .48 1.4.9.4.4.7.8.9 1.4.17.4.37 1 .42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.05 1.2-.25 1.8-.42 2.2-.22.6-.48 1-.9 1.4-.4.4-.8.7-1.4.9-.4.17-1 .37-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.05-1.8-.25-2.2-.42-.6-.22-1-.48-1.4-.9-.4-.4-.7-.8-.9-1.4-.17-.4-.37-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.2.25-1.8.42-2.2.22-.6.48-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.17 1-.37 2.2-.42C8.4 2.2 8.8 2.2 12 2.2Zm0 7.1a4.9 4.9 0 1 0 0 9.8 4.9 4.9 0 0 0 0-9.8Zm0 1.8a3.1 3.1 0 1 1 0 6.2 3.1 3.1 0 0 1 0-6.2Zm5.1-2.1a1.15 1.15 0 1 0 0 2.3 1.15 1.15 0 0 0 0-2.3Z"/></svg></a>
+          <a id="socTt" target="_blank" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.8a4.3 4.3 0 0 1-1-2.8h-3v12.2a2.5 2.5 0 1 1-2.5-2.5c.26 0 .5.04.74.1v-3.1a5.6 5.6 0 1 0 4.76 5.5V9.2a7.3 7.3 0 0 0 4.3 1.4V7.5a4.3 4.3 0 0 1-3.3-1.7Z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="lbl" style="font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);margin-bottom:.9rem;font-weight:600">Explore</div>
+        <p style="line-height:2.2"><a href="#why" style="color:var(--ivory-dim)">Why HopeVision</a><br><a href="#products" style="color:var(--ivory-dim)">Cameras</a><br><a href="#leadership" style="color:var(--ivory-dim)">Our team</a><br><a href="#contact" style="color:var(--ivory-dim)">Contact</a></p>
+      </div>
+      <div>
+        <div class="lbl" style="font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);margin-bottom:.9rem;font-weight:600">Reach us</div>
+        <p style="line-height:2.2;color:var(--ivory-dim)"><span id="footPhone1"></span><br><span id="footPhone2"></span><br><span id="footEmail"></span><br><span id="footAddr"></span></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> HopeVision Innovations PTY LTD. All rights reserved.</span>
+      <a class="lock" href="admin/">● Edit site</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float wa" id="waFloat" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M.06 24l1.7-6.2a11.9 11.9 0 1 1 4.5 4.4L.06 24Zm6.6-3.8.37.23a9.9 9.9 0 0 0 5.04 1.38h.01a9.87 9.87 0 1 0-8.36-4.6l.24.38-1 3.66 3.7-.97Zm11.4-5.46c-.16-.27-.6-.43-1.25-.76-.65-.32-3.85-1.9-4.45-2.12-.6-.22-1.03-.32-1.46.33-.43.65-1.67 2.12-2.05 2.55-.38.43-.75.49-1.4.16-.65-.32-2.74-1-5.22-3.22-1.93-1.72-3.23-3.85-3.61-4.5-.38-.65-.04-1 .28-1.32.29-.29.65-.76.97-1.14.32-.38.43-.65.65-1.08.22-.43.11-.81-.05-1.14-.16-.32-1.46-3.52-2-4.82-.53-1.27-1.06-1.1-1.46-1.12l-1.25-.02c-.43 0-1.13.16-1.72.81-.59.65-2.26 2.2-2.26 5.38s2.31 6.25 2.63 6.68c.32.43 4.55 6.95 11.02 9.75 1.54.66 2.74 1.06 3.68 1.36 1.55.49 2.95.42 4.06.25 1.24-.18 3.85-1.57 4.39-3.09.54-1.52.54-2.82.38-3.09Z"/></svg></a>
+
+<script>
+/* Inline fallback so the page still shows when opened locally (file://).
+   When hosted, content/site.json is fetched and overrides this. */
+const FALLBACK = {
+  "theme": {
+    "accent": "#d3a571",
+    "background": "#13294a",
+    "brandSize": 1.35
+  },
+  "hero": {
+    "eyebrow": "Solar · SIM · WiFi Security",
+    "title": "Security that <em>never sleeps.</em>",
+    "motto": "“Sekhele sa ts'ereletso”",
+    "lead": "Premium solar-powered cameras that work where others can't — no electricity, no router required. Watch your home, farm or business from anywhere, day or night.",
+    "image": "images/hero.jpg",
+    "stat1n": "100%", "stat1l": "Solar powered",
+    "stat2n": "24/7", "stat2l": "Night vision",
+    "stat3n": "0", "stat3l": "Wiring needed"
+  },
+  "why": {
+    "eyebrow": "The HopeVision difference",
+    "heading": "Built for the way we actually live.",
+    "intro": "Power cuts, remote plots, no fibre line — ordinary cameras fail here. Ours were chosen precisely because they don't.",
+    "cards": [
+      { "title": "Runs on the sun", "text": "Built-in solar panel and 8000mAh battery. No cables to the grid, no monthly electricity worry — it keeps watching through every load-shedding." },
+      { "title": "SIM or WiFi — your choice", "text": "Pop in a 4G SIM card and it works in the deepest rural areas with no router at all. Or connect to WiFi at home. You're covered either way." },
+      { "title": "You see everything", "text": "Full-colour HD by day, infrared by night, motion tracking that follows movement, and instant alerts straight to your phone — from anywhere in the world." }
+    ]
+  },
+  "products": {
+    "eyebrow": "In stock now",
+    "heading": "Our solar camera range.",
+    "intro": "Every model is solar-powered, weatherproof, and ready to protect indoors or out. Prices in Loti (M). Tap “Order” to reach us instantly.",
+    "items": [
+      { "id": "vts02g", "name": "VTS02-G", "sub": "Triple-image dual-lens flagship · 4G SIM", "badge": "Flagship", "price": "1,241.34", "image": "images/vts02g.jpg", "flagship": true, "variant": "Our top model — dual lens with 3 images, 2.8mm + 4mm, for the widest, sharpest coverage.", "features": "Dual lens, 3 images, 4.0MP HD, 4G SIM card, PTZ rotate & track, Two-way audio, Night vision, Voice alarm, 8W solar + 8000mAh, Indoor & outdoor" },
+      { "id": "vcs20g", "name": "VCS20-G", "sub": "Dual-lens · 4G SIM", "badge": "Best seller", "price": "994.75", "image": "images/vcs20g.jpg", "flagship": false, "variant": "", "features": "Dual lens, 4.0MP HD, 4G SIM card, PTZ rotate & track, Two-way intercom, Night vision, TF card storage, 8W solar + 8000mAh" },
+      { "id": "vc20w", "name": "VC20-W", "sub": "Compact · WiFi", "badge": "Value", "price": "844.46", "image": "images/vc20w.jpg", "flagship": false, "variant": "", "features": "3.0MP HD, WiFi connection, Two-way voice, Motion detection, Picture push, TF card storage, 8W solar + 8000mAh" },
+      { "id": "vc3", "name": "VC3-W / VC3-G", "sub": "5.0MP PTZ · WiFi or SIM", "badge": "Two versions", "price": "821.78", "image": "images/vc3.jpg", "flagship": false, "variant": "Same camera, your choice of connection: VC3-W uses WiFi, VC3-G uses a 4G SIM card. Both solar.", "features": "5.0MP HD, PTZ rotate & track, WiFi or 4G SIM, Cloud + TF storage, Night vision, 8W solar + 8000mAh" }
+    ]
+  },
+  "heritage": {
+    "image": "images/band.jpg",
+    "motto": "“Sekhele sa ts'ereletso”",
+    "text": "Like the Maluti standing watch over the Kingdom in the Sky, HopeVision keeps a steady eye on what matters most to you — your home, your family, your livelihood. Proudly rooted in Lesotho."
+  },
+  "leadership": {
+    "eyebrow": "The people behind HopeVision",
+    "heading": "Trusted faces, real accountability.",
+    "people": [
+      { "name": "Tsepo Mantutle", "role": "Founder", "initials": "TM", "bio": "Founder of HopeVision, on a mission to make reliable security accessible.", "image": "" },
+      { "name": "Relebohile Mafate", "role": "Manager & Director", "initials": "RM", "bio": "Director overseeing operations, installations and client care.", "image": "" }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Let's protect what's yours",
+    "heading": "Get in touch.",
+    "address": "FosoHardware Complex, Lesotho",
+    "mapQuery": "FosoHardware Complex Lesotho",
+    "phone1": "+266 63 301 566",
+    "phone2": "+27 72 150 1937",
+    "whatsapp": "26663301566",
+    "email": "hopehubsolutions@gmail.com",
+    "bankName": "Standard Bank",
+    "bankAccountName": "Tsepo Mantutle",
+    "bankAccountNo": "9080008256590",
+    "bankType": "Current",
+    "bankBranch": "Pioneer · 062967"
+  },
+  "social": {
+    "instagram": "https://instagram.com/nutty_mantutle",
+    "tiktok": "https://tiktok.com/@nutty_mantutle",
+    "footerTagline": "“Sekhele sa ts'ereletso” — your shield of security. Solar surveillance for homes, farms and businesses across Lesotho."
+  }
+};
+
+async function loadContent(){
+  try{
+    const r = await fetch('content/site.json', {cache:'no-store'});
+    if(r.ok) return await r.json();
+  }catch(e){}
+  return FALLBACK;
+}
+
+const el = id => document.getElementById(id);
+const txt = (id,v)=>{ const n=el(id); if(n!=null) n.textContent=v; };
+const html = (id,v)=>{ const n=el(id); if(n!=null) n.innerHTML=v; };
+
+let C, waLink;
+
+function applyTheme(t){
+  if(!t) return;
+  const root=document.documentElement.style;
+  if(t.accent){ root.setProperty('--bronze', t.accent); }
+  if(t.background){ root.setProperty('--navy', t.background); }
+  if(t.brandSize){ document.querySelectorAll('.brand').forEach(b=>b.style.fontSize=t.brandSize+'rem'); }
+}
+
+function buildWa(num,msg){ return 'https://wa.me/'+num+'?text='+encodeURIComponent(msg); }
+
+function render(){
+  /* THEME */
+  applyTheme(C.theme);
+
+  /* HERO */
+  txt('heroEyebrow', C.hero.eyebrow);
+  html('heroTitle', C.hero.title);
+  txt('heroMotto', C.hero.motto);
+  txt('heroLead', C.hero.lead);
+  el('heroBg').style.backgroundImage = `url("${C.hero.image}")`;
+  txt('s1n',C.hero.stat1n); txt('s1l',C.hero.stat1l);
+  txt('s2n',C.hero.stat2n); txt('s2l',C.hero.stat2l);
+  txt('s3n',C.hero.stat3n); txt('s3l',C.hero.stat3l);
+
+  /* WHY */
+  txt('whyEyebrow',C.why.eyebrow); txt('whyHeading',C.why.heading); txt('whyIntro',C.why.intro);
+  const icons=[
+    '<path d="M12 2v6m0 8v6M4.2 4.2l4.2 4.2m7.2 7.2l4.2 4.2M2 12h6m8 0h6M4.2 19.8l4.2-4.2m7.2-7.2l4.2-4.2"/>',
+    '<rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M12 18h.01"/>',
+    '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>'
+  ];
+  el('whyGrid').innerHTML = C.why.cards.map((c,i)=>`
+    <div class="why-card reveal">
+      <div class="ic"><svg class="ico" viewBox="0 0 24 24">${icons[i%3]}</svg></div>
+      <h3>${c.title}</h3><p>${c.text}</p>
+    </div>`).join('');
+
+  /* PRODUCTS */
+  txt('prodEyebrow',C.products.eyebrow); txt('prodHeading',C.products.heading); txt('prodIntro',C.products.intro);
+  const cur='M';
+  el('prodGrid').innerHTML = C.products.items.map(p=>{
+    const feats=(p.features||'').split(',').map(f=>f.trim()).filter(Boolean).map(f=>`<li>${f}</li>`).join('');
+    const variant=p.variant?`<div class="variant">${p.variant}</div>`:'';
+    const wa=buildWa(C.contact.whatsapp, `Hello HopeVision, I'm interested in the ${p.name} (${cur}${p.price}).`);
+    return `<div class="prod ${p.flagship?'flagship':''} reveal">
+      <span class="tag">${p.badge}</span>
+      <div class="photo"><img src="${p.image}" alt="${p.name}"></div>
+      <div><h3>${p.name}</h3><div class="sub">${p.sub}</div>
+        <ul>${feats}</ul>${variant}
+        <div class="price-row"><div class="price">${cur}${p.price}<small> incl.</small></div>
+          <a class="btn btn-gold" href="${wa}" target="_blank">Order ${p.name.split(' ')[0]}</a></div>
+      </div></div>`;
+  }).join('');
+
+  /* HERITAGE */
+  el('bandBg').style.backgroundImage = `url("${C.heritage.image}")`;
+  txt('herMotto',C.heritage.motto); txt('herText',C.heritage.text);
+
+  /* LEADERSHIP */
+  txt('leadEyebrow',C.leadership.eyebrow); txt('leadHeading',C.leadership.heading);
+  el('leadGrid').innerHTML = C.leadership.people.map(pp=>`
+    <div class="leader reveal">
+      <div class="av">${pp.image?`<img src="${pp.image}" alt="${pp.name}">`:pp.initials}</div>
+      <div><div class="role">${pp.role}</div><h3>${pp.name}</h3>
+      <p style="color:var(--ivory-dim);font-size:.9rem">${pp.bio}</p></div>
+    </div>`).join('');
+
+  /* CONTACT */
+  txt('ctEyebrow',C.contact.eyebrow); txt('ctHeading',C.contact.heading);
+  txt('ctAddr',C.contact.address);
+  const p1=el('ctPhone1'); p1.textContent=C.contact.phone1; p1.href='tel:'+C.contact.phone1.replace(/\s/g,'');
+  const p2=el('ctPhone2'); p2.textContent=C.contact.phone2; p2.href='tel:'+C.contact.phone2.replace(/\s/g,'');
+  const em=el('ctEmail'); em.textContent=C.contact.email; em.href='mailto:'+C.contact.email;
+  el('ctMap').src='https://maps.google.com/maps?q='+encodeURIComponent(C.contact.mapQuery)+'&z=13&output=embed';
+  txt('bkName',C.contact.bankName); txt('bkAcctName',C.contact.bankAccountName);
+  txt('bkAcctNo',C.contact.bankAccountNo); txt('bkType',C.contact.bankType); txt('bkBranch',C.contact.bankBranch);
+
+  /* FOOTER */
+  txt('footTagline',C.social.footerTagline);
+  el('socIg').href=C.social.instagram; el('socTt').href=C.social.tiktok;
+  txt('footPhone1',C.contact.phone1); txt('footPhone2',C.contact.phone2);
+  txt('footEmail',C.contact.email); txt('footAddr',C.contact.address);
+  el('yr').textContent=new Date().getFullYear();
+
+  /* WHATSAPP LINKS */
+  waLink=buildWa(C.contact.whatsapp, "Hello HopeVision, I'm interested in your solar security cameras.");
+  document.querySelectorAll('.wa').forEach(a=>{a.href=waLink;a.target='_blank';});
+
+  buildCoverflow();
+  observeReveals();
+}
+
+/* COVERFLOW */
+let cfIndex=0, cfItems=[], cfTimer;
+function buildCoverflow(){
+  const cf=el('coverflow'); cf.innerHTML='';
+  const dots=el('cfDots'); dots.innerHTML='';
+  cfItems=C.products.items;
+  cfIndex=cfItems.findIndex(p=>p.flagship); if(cfIndex<0)cfIndex=0;
+  cfItems.forEach((p,i)=>{
+    cf.insertAdjacentHTML('beforeend',`<div class="cf-card" data-i="${i}">
+      <span class="cf-badge">${p.badge}</span><img src="${p.image}" alt="${p.name}">
+      <div class="cf-meta"><div class="nm">${p.name}</div><div class="pr">M${p.price}</div></div></div>`);
+    dots.insertAdjacentHTML('beforeend',`<i data-i="${i}"></i>`);
+  });
+  cf.querySelectorAll('.cf-card').forEach(c=>c.addEventListener('click',()=>{cfIndex=+c.dataset.i;layoutCoverflow();restartTimer();}));
+  dots.querySelectorAll('i').forEach(d=>d.addEventListener('click',()=>{cfIndex=+d.dataset.i;layoutCoverflow();restartTimer();}));
+  layoutCoverflow(); restartTimer();
+}
+function layoutCoverflow(){
+  const cards=document.querySelectorAll('.cf-card'); const n=cards.length;
+  cards.forEach((c,i)=>{
+    let off=i-cfIndex; if(off>n/2)off-=n; if(off<-n/2)off+=n;
+    const abs=Math.abs(off), x=off*150, z=-abs*220, ry=off*-32, sc=off===0?1.12:0.82-abs*0.04;
+    c.style.transform=`translateX(${x}px) translateZ(${z}px) rotateY(${ry}deg) scale(${sc})`;
+    c.style.opacity=abs>2?0:(off===0?1:0.55-abs*0.08);
+    c.style.zIndex=100-abs; c.style.filter=off===0?'none':'brightness(.7)';
+  });
+  document.querySelectorAll('#cfDots i').forEach((d,i)=>d.classList.toggle('on',i===cfIndex));
+}
+function restartTimer(){ clearInterval(cfTimer); cfTimer=setInterval(()=>{cfIndex=(cfIndex+1)%cfItems.length;layoutCoverflow();},3600); }
+
+/* REVEAL */
+let io;
+function observeReveals(){
+  if(!io){ io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.15}); }
+  document.querySelectorAll('.reveal:not(.in)').forEach(x=>io.observe(x));
+}
+
+/* NAV */
+const hdr=el('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40));
+el('burger').addEventListener('click',()=>location.hash='#products');
+addEventListener('resize',layoutCoverflow);
+
+/* INIT */
+loadContent().then(c=>{C=c; render();});
+
+</script>
+</body>
+</html>
