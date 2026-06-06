@@ -101,14 +101,21 @@
         "role": "Founder",
         "initials": "TM",
         "bio": "Founder of HopeVision, on a mission to make reliable security accessible.",
-        "image": ""
+        "image": "/images/FOUNDER.jpeg"
       },
       {
         "name": "Relebohile Mafate",
         "role": "Manager & Director",
         "initials": "R.M",
         "bio": "Director overseeing operations, installations and client care.",
-        "image": ""
+        "image": "/images/MANAGER.jpeg"
+      },
+      {
+        "name": "Moipone Mantutle",
+        "role": "Sales & Enquiries Coordinator",
+        "initials": "M.M",
+        "bio": "O thusa bareki ho fumana lik'hamera tse loketseng ts'ireletso ea bona, a araba lipotso le ho hlophisa ho rekoa. O tla u amohela ka mofuthu 'me a u tataise ho tloha qalong ho fihlela camera ea hao e kentsoe.",
+        "image": "/images/nono.jpeg"
       }
     ]
   },
